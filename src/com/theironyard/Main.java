@@ -35,6 +35,9 @@ public class Main {
 
     public static void processCommand(Scanner scanner, ArrayList<HashMap<String, String>> variables, String line) {
         line = line.trim(); //trims off whitespace before and after
+        if (line.isEmpty()) {
+            return;
+        }
         String cmd = line.substring(0, line.indexOf(" "));//get command from line of code
         String params = line.substring(line.indexOf(" ") +1);
         HashMap<String, String> vars = combineMaps(variables);
